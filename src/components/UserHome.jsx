@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Image, Button, Jumbotron, Card, CardColumns, CardDeck } from 'react-bootstrap';
 import './Home.css';
 import CustomNavbar from './CustomNavbar';
+import SearchDropdown from './SearchDropdown';
+import SeachDropdown from './SearchDropdown';
+import IngredientsDropdown from './IngredientsDropdown';
 const styles = {
     card: {
       backgroundColor: '#B7E0F2',
@@ -23,12 +26,16 @@ class UserHome extends Component {
         console.log('id => ' + localStorage.getItem('id'));
     }
     render() {
+        
+            //const [singleSelections, setSingleSelections] = useState([]);
+            //const [multiSelections, setMultiSelections] = useState([]);
         return (<>
         
             <Container>
                 <Jumbotron>
                     <h2>Welcome to RecipeBook</h2>
                     <p>This is how to build a website with React, React-Router, React-bootstrap</p>
+                    <IngredientsDropdown />
                     <Link to="/about">
                         <Button bsStyle="primary">About</Button>
                     </Link>

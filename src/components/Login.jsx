@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginService from '../services/LoginService.js'
-import {BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import './Login.css'
 import CustomNavbar from './CustomNavbar.jsx';
 
@@ -10,10 +10,12 @@ class Login extends Component {
         this.state = {
             emailId: '',
             password: '',
-            id: ''
+            id: '',
+            errorMessage: ''
         }
         this.changeEmailIdHandler = this.changeEmailIdHandler.bind(this);
         this.changePasswordHandler = this.changePasswordHandler.bind(this);
+        this.loginEvent = this.loginEvent.bind(this);
     }
     loginEvent = (e) => {
         e.preventDefault();
@@ -23,20 +25,22 @@ class Login extends Component {
         LoginService.loginUser(user).then(res => {
             console.log('response => ' + JSON.stringify(res));
             if (res.emailId === 'admin') {
-                localStorage.setItem('emailId','admin');
-                localStorage.setItem('id',1);
+                localStorage.setItem('emailId', 'admin');
+                localStorage.setItem('id', 1);
                 this.props.history.push('/admin');
             } else {
-                localStorage.setItem('emailId',res.data.emailId);
-                localStorage.setItem('id',res.data.id);
+                localStorage.setItem('emailId', res.data.emailId);
+                localStorage.setItem('id', res.data.id);
                 this.props.history.push('/user');
-                
+
             }
+            localStorage.setItem('isLoggedIn', true);
 
         })
             .catch(error => {
-                this.setState({ errorMessage: error.message });
+                
                 console.error('There was an error!', error);
+                this.setState({ errorMessage: 'Invalid EmailId or Password !' })
             });
     }
     changeEmailIdHandler = (event) => {
@@ -46,6 +50,7 @@ class Login extends Component {
         this.setState({ password: event.target.value });
     }
     render() {
+        const { errorMessage } = this.state
         return (
             <>
                 <br />
@@ -76,9 +81,17 @@ class Login extends Component {
                             </div>
 
                             <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={this.loginEvent}>Sign in</button>
-                            <p className="forgot-password text-right">
-                                Forgot <a href="#">password?</a>
-                            </p>
+                            <div>
+                                {errorMessage ? <p className="forgot-password text-left" style={{ color: 'red'}}>
+                                    {errorMessage}
+                                </p> : null}
+                                <p className="forgot-password text-right" style = {{ top : '10px'}}>
+                                    Forgot <a href="#">password?</a>
+                                </p>
+                            </div>
+
+
+
                         </form>
                     </div>
                 </div>
