@@ -11,9 +11,7 @@ class IngredientsDropdown extends Component {
         super(props)
         this.state = {
             ingredients : [
-                {
-                    name : 'Milk'
-                }
+                
             ],
             data : []
         }
@@ -67,14 +65,14 @@ class IngredientsDropdown extends Component {
 
                 <Form>
                     <Form.Group style={{ marginTop: '20px' }}>
-                        <Form.Label>Multiple Selections</Form.Label>
+                        <Form.Label>Ingredients To Find Recipes</Form.Label>
                         <Typeahead
                             id="basic-typeahead-multiple"
                             labelKey="name"
                             multiple
                             onChange={this.handleChange}
                             options={this.state.data}
-                            placeholder="Choose several states..."
+                            placeholder="Choose ingredients..."
                             selected={this.state.ingredients}
                         />
                     </Form.Group>
