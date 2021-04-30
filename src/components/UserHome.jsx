@@ -35,7 +35,7 @@ class UserHome extends Component {
                 <Jumbotron>
                     <h2>Welcome to RecipeBook</h2>
                     <p>This is how to build a website with React, React-Router, React-bootstrap</p>
-                    <IngredientsDropdown />
+                    <IngredientsDropdown {...this.props}/>
                     <Link to="/about">
                         <Button bsStyle="primary">About</Button>
                     </Link>
