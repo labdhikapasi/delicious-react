@@ -5,6 +5,7 @@ import UserHome from './components/UserHome';
 import CustomNavbar from './components/CustomNavbar';
 import Login from './components/Login';
 import Recipe from './components/Recipe';
+import FullRecipe from './components/FullRecipe';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         <Route exact path="/" component={UserHome}/>
         <Route  path="/login" component={Login}/>
         <Route  path="/user" component={UserHome}/> 
-        <Route  path="/recipe" render={(props) => <Recipe {...props}/>}/>
+        <Route  path="/recipes" render={(props) => <Recipe {...props}/>}/>
+        <Route  path="/recipe"  render={(props) => <FullRecipe {...props}/>}/>
         
       </div>
     </Router>

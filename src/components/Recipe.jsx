@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Image, Button, Jumbotron, Card, CardColumns, CardDeck } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 const styles = {
     card: {
         borderWidth: '0px', 
@@ -24,6 +26,7 @@ class Recipe extends Component {
             recipes: this.props.location.state
         })
     }
+    
     render() {
         
         return (
@@ -37,7 +40,12 @@ class Recipe extends Component {
                 {
                     this.state.recipes.map(recipe => 
                         
-                        
+                        <Link to={{
+                            pathname:'/recipe',
+                            state: {
+                                recipe: recipe
+                            }
+                        }}>
                         <Card style={styles.card}>
                             <Card.Img variant="top" src={process.env.PUBLIC_URL+'assets/recipeImages/'+recipe.imageUrl} className="h-75 d-inline-block" style={styles.cardImage} />
                             <Card.Body>
@@ -45,6 +53,7 @@ class Recipe extends Component {
     
                             </Card.Body>
                         </Card>
+                        </Link>
                     )
                 }
                 </CardColumns>

@@ -15,6 +15,9 @@ const styles = {
     cardImage: {
       objectFit: 'cover',
       borderRadius:'50px 50px 0 0'
+    },
+    ingredientImage: {
+        backgroundColor:'url("../images/background_image.jpg")'
     }
     
   }
@@ -32,7 +35,8 @@ class UserHome extends Component {
         return (<>
         
             <Container>
-                <Jumbotron>
+                <br></br>
+                <Jumbotron style={styles.ingredientImage}>
                     <h2>Welcome to RecipeBook</h2>
                     <p>This is how to build a website with React, React-Router, React-bootstrap</p>
                     <IngredientsDropdown {...this.props}/>

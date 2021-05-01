@@ -7,9 +7,15 @@
     display: flex;
     font-weight: 400;
     font-family: sans-serif;
-    background: #12c2e9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f64f59, #c471ed);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f64f59, #c471ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url('../images/background_image.jpg');
+    /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
   }
   
@@ -67,4 +73,12 @@
   
   .forgot-password a {
     color: #167bff;
+  }
+  .jumbotron {
+    background-image: url("../images/ingredient_background.jpg");
+    background-size: cover;
+  }
+  .recipeDirections {
+    background-image: url("../images/recipe_directions_background.jpg");
+    background-size: cover;
   }

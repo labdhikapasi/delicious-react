@@ -28,7 +28,7 @@ class IngredientsDropdown extends Component {
             
                 localStorage.setItem('emailId', res.data.emailId);
                 localStorage.setItem('id', res.data.id);
-                this.props.history.push({pathname: "/recipe",
+                this.props.history.push({pathname: "/recipes",
                 state: res.data});
             })
             .catch(error => {
@@ -76,7 +76,7 @@ class IngredientsDropdown extends Component {
                             selected={this.state.ingredients}
                         />
                     </Form.Group>
-                    <Button variant="primary" type="submit" onClick={this.submitEvent} >
+                    <Button variant="dark" type="submit" onClick={this.submitEvent} style={{backgroungColor:'#343a40 !important'}}>
                         Submit
                     </Button> 
                 </Form>
