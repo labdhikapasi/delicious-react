@@ -5,6 +5,25 @@ import { NavLink } from 'react-router-dom';
 class CustomNavbar extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            signinButton : <Nav.Link eventKey={2} href="/login">
+            Sign In</Nav.Link>
+        }
+    }
+    componentDidMount(){
+        if(localStorage.getItem('isLoggedIn')){
+            console.log('logged in : '+localStorage.getItem('isLoggedIn'))
+            this.setState({
+                signinButton : <Nav.Link onClick={this.signOut}>
+            Sign Out</Nav.Link>
+            })
+            
+        }else{
+            this.setState({
+            signinButton : <Nav.Link eventKey={2} href="/login">
+            Sign In</Nav.Link>
+            })
+        }
     }
     signOut = (e) => {
         //e.preventDefault();
@@ -45,7 +64,7 @@ class CustomNavbar extends Component {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">Profile</Nav.Link>
-                        {signinButton}
+                        {this.state.signinButton}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

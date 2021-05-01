@@ -24,17 +24,23 @@ class Login extends Component {
 
         LoginService.loginUser(user).then(res => {
             console.log('response => ' + JSON.stringify(res));
-            if (res.emailId === 'admin') {
-                localStorage.setItem('emailId', 'admin');
-                localStorage.setItem('id', 1);
-                this.props.history.push('/admin');
-            } else {
-                localStorage.setItem('emailId', res.data.emailId);
-                localStorage.setItem('id', res.data.id);
-                this.props.history.push('/user');
+            if(res.data.emailId){
+                if (res.data.emailId === 'admin') {
+                    localStorage.setItem('emailId', 'admin');
+                    localStorage.setItem('id', 1);
+                    this.props.history.push('/admin');
+                } else {
+                    localStorage.setItem('emailId', res.data.emailId);
+                    localStorage.setItem('id', res.data.id);
+                    this.props.history.push('/user');
+    
+                }
+                localStorage.setItem('isLoggedIn', true);
+            }else{
 
             }
-            localStorage.setItem('isLoggedIn', true);
+            
+            this.setState({ errorMessage: 'Invalid EmailId or Password !' })
 
         })
             .catch(error => {
