@@ -72,8 +72,9 @@ class IngredientsDropdown extends Component {
                             multiple
                             onChange={this.handleChange}
                             options={this.state.data}
-                            placeholder="Choose ingredients..."
+                            placeholder="Choose ingredients ...."
                             selected={this.state.ingredients}
+                            style={{borderColor:'black'}}
                         />
                     </Form.Group>
                     <Button variant="dark" type="submit" onClick={this.submitEvent} style={{backgroungColor:'#343a40 !important'}}>

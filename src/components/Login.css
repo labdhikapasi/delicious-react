@@ -44,10 +44,11 @@
     padding: 40px 55px 45px 55px;
     border-radius: 15px;
     transition: all .3s;
+    background-image: url('../images/login_background.jpg');
   }
   
   .outer .form-control:focus {
-    border-color: #167bff;
+    border-color: black;
     box-shadow: none;
   }
   
@@ -67,12 +68,12 @@
     text-align: right;
     font-size: 13px;
     padding-top: 10px;
-    color: #7f7d7d;
+    color: #000000;
     margin: 0;
   }
   
   .forgot-password a {
-    color: #167bff;
+    color: #000000;
   }
   .jumbotron {
     background-image: url("../images/ingredient_background.jpg");
@@ -81,4 +82,23 @@
   .recipeDirections {
     background-image: url("../images/recipe_directions_background.jpg");
     background-size: cover;
+    text-align: left;
+    border-spacing:10px;
+    padding: 15px;
+    font-size: 18px;
+    
+    border-radius:20px
+  }
+  .recipeDirectionsHeadingsLeft {
+    
+    font-size: 18px;
+    float:left;
+    width: 500px;
+    
+  }
+  .recipeDirectionsHeadingsRight {
+    
+    float:left; 
+    font-size: 18px;
+    width: 300px;
   }

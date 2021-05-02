@@ -59,6 +59,7 @@ class Login extends Component {
         const { errorMessage } = this.state
         return (
             <>
+            
                 <br />
                 <br />
                 <br />
@@ -88,12 +89,17 @@ class Login extends Component {
 
                             <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={this.loginEvent}>Sign in</button>
                             <div>
+                                <div className="forgot-password text-left" style={{width:'190px', float: 'left'}}><a href="/register">Register</a></div>
+                                
+                                
+                                <div className="forgot-password text-right" style={{width:'150px', float: 'left', top : '10px'}}>
+                                
+                                    Forgot <a href="#">password?</a>
+                                
+                                </div>
                                 {errorMessage ? <p className="forgot-password text-left" style={{ color: 'red'}}>
                                     {errorMessage}
                                 </p> : null}
-                                <p className="forgot-password text-right" style = {{ top : '10px'}}>
-                                    Forgot <a href="#">password?</a>
-                                </p>
                             </div>
 
 

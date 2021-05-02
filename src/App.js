@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import UserHome from './components/UserHome';
 import CustomNavbar from './components/CustomNavbar';
 import Login from './components/Login';
+import Register from './components/Register';
 import Recipe from './components/Recipe';
 import FullRecipe from './components/FullRecipe';
 
@@ -13,9 +14,10 @@ function App() {
     <Router>
       <div>
       
-       <CustomNavbar />
+        <CustomNavbar />
         <Route exact path="/" component={UserHome}/>
         <Route  path="/login" component={Login}/>
+        <Route  path="/register" component={Register}/>
         <Route  path="/user" component={UserHome}/> 
         <Route  path="/recipes" render={(props) => <Recipe {...props}/>}/>
         <Route  path="/recipe"  render={(props) => <FullRecipe {...props}/>}/>

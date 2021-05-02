@@ -64,7 +64,7 @@ class CustomNavbar extends Component {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">Profile</Nav.Link>
-                        {this.state.signinButton}
+                        {signinButton}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
