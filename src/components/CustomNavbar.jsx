@@ -11,7 +11,8 @@ class CustomNavbar extends Component {
         }
     }
     componentDidMount(){
-        if(localStorage.getItem('isLoggedIn')){
+        //if(localStorage.getItem('isLoggedIn')){
+        if(this.props.loginStatus){
             console.log('logged in : '+localStorage.getItem('isLoggedIn'))
             this.setState({
                 signinButton : <Nav.Link onClick={this.signOut}>
@@ -35,9 +36,11 @@ class CustomNavbar extends Component {
         window.location.href = '/user';
     }
     render() {
-        
+        console.log('props loginStatus = '+this.props.loginStatus);
+        console.log('props user = '+this.props.user);
         let signinButton;
-        if(localStorage.getItem('isLoggedIn')){
+        //if(localStorage.getItem('isLoggedIn')){
+        if(this.props.loginStatus){
             console.log('logged in : '+localStorage.getItem('isLoggedIn'))
             signinButton = <Nav.Link onClick={this.signOut}>
             Sign Out</Nav.Link>
@@ -52,7 +55,8 @@ class CustomNavbar extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
+                    {this.props.user === 'ADMIN' ? <Nav.Link href="/">Ingredients</Nav.Link> : <Nav.Link href="/">Home</Nav.Link>}
+                    {this.props.user === 'ADMIN' ? <Nav.Link href="/">Recipes</Nav.Link> : null}
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="/home">Home</NavDropdown.Item>

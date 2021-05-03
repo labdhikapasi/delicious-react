@@ -28,14 +28,19 @@ class Login extends Component {
                 if (res.data.emailId === 'admin') {
                     localStorage.setItem('emailId', 'admin');
                     localStorage.setItem('id', 1);
+                    this.props.onHandleLoginChange(true,'ADMIN');
                     this.props.history.push('/admin');
+                    
                 } else {
                     localStorage.setItem('emailId', res.data.emailId);
                     localStorage.setItem('id', res.data.id);
+                    this.props.onHandleLoginChange(true,'USER');
                     this.props.history.push('/user');
+                    
     
                 }
-                localStorage.setItem('isLoggedIn', true);
+                //localStorage.setItem('isLoggedIn', true);
+                
             }else{
 
             }
