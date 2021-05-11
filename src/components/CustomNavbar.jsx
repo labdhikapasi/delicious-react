@@ -57,9 +57,9 @@ class CustomNavbar extends Component {
                     <Nav className="mr-auto">
                     {this.props.user === 'ADMIN' ? <Nav.Link href="/">Ingredients</Nav.Link> : <Nav.Link href="/">Home</Nav.Link>}
                     {this.props.user === 'ADMIN' ? <Nav.Link href="/">Recipes</Nav.Link> : null}
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="/home">Home</NavDropdown.Item>
+                            <NavDropdown.Item href="/addRecipe">Add Recipe</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                             <NavDropdown.Divider />

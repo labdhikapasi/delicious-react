@@ -47,11 +47,13 @@
     background-image: url('../images/login_background.jpg');
   }
   
-  .outer .form-control:focus {
-    border-color: black;
+  .outer .form-control {
+    
     box-shadow: none;
   }
-  
+  .form-control:focus {
+    border-color: #c2c7c2; box-shadow: 0 0 0 0.2rem rgb(185, 175, 171)
+  }
   .outer h3 {
     text-align: center;
     margin: 0;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom'; 
 import UserHome from './components/UserHome';
+import AdminHome from './components/AdminHome';
 import CustomNavbar from './components/CustomNavbar';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -37,6 +38,7 @@ handleLoginChange(loginStatus,user){
         <Route  path="/login" render={(props) => <Login {...props} user={this.state.loginUser} loginStatus={this.isLoggedIn} onHandleLoginChange={this.handleLoginChange}/>}/>
         <Route  path="/register" component={Register}/>
         <Route  path="/user" component={UserHome}/> 
+        <Route  path="/admin" component={AdminHome}/> 
         <Route  path="/recipes" render={(props) => <Recipe {...props}/>}/>
         <Route  path="/recipe"  render={(props) => <FullRecipe {...props}/>}/>
         
