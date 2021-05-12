@@ -1,12 +1,10 @@
 import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Image, Button, Jumbotron, Card, CardColumns, CardDeck } from 'react-bootstrap';
+import { Container, Jumbotron, Card, CardColumns } from 'react-bootstrap';
 import './Home.css';
-import CustomNavbar from './CustomNavbar';
-import SearchDropdown from './SearchDropdown';
-import SeachDropdown from './SearchDropdown';
-import IngredientsDropdown from './IngredientsDropdown';
+
 import AddRecipe from './AddRecipe';
+
 const styles = {
     card: {
         borderWidth: '0px', 

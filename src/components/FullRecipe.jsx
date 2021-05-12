@@ -25,7 +25,7 @@ class FullRecipe extends Component {
                     
                         <div class="col-10 mx-auto text-center" style={{width:'700'}}>
                         <div class="recipeDirections"><h2 style={{textAlign:'center', height:'30px'}}>{recipe.name}</h2></div><br />
-                            <img src={process.env.PUBLIC_URL + 'assets/recipeImages/' + recipe.imageUrl} width='600' height='450' style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', borderRadius:'10px'}} />
+                            <img src={recipe.imageUrl} width='600' height='450' style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', borderRadius:'10px'}} />
                             
                             {/* <Jumbotron>
                                 hiiii

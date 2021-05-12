@@ -47,7 +47,7 @@ class Recipe extends Component {
                             }
                         }}>
                         <Card style={styles.card}>
-                            <Card.Img variant="top" src={process.env.PUBLIC_URL+'assets/recipeImages/'+recipe.imageUrl} className="h-75 d-inline-block" style={styles.cardImage} />
+                            <Card.Img variant="top" src={recipe.imageUrl} className="h-75 d-inline-block" style={styles.cardImage} />
                             <Card.Body>
                                 <Card.Title className="text-center" style={{color:'black'}}>{recipe.name}</Card.Title>
     
