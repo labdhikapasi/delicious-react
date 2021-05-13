@@ -86,21 +86,22 @@
     background-size: cover;
     text-align: left;
     border-spacing:10px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 15px;
-    font-size: 18px;
-    
+    font-size: 15px;
     border-radius:20px
   }
   .recipeDirectionsHeadingsLeft {
     
     font-size: 18px;
     float:left;
-    width: 500px;
+    width: 60%;
     
   }
   .recipeDirectionsHeadingsRight {
     
     float:left; 
     font-size: 18px;
-    width: 300px;
+    width: 40%;
   }

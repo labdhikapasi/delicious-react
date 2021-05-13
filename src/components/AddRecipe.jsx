@@ -26,12 +26,14 @@ class AddRecipe extends Component {
             directions: '',
             ingredientsList: '',
             imageUrl: '',
-            message: ''
+            message: '',
+            nameError: null
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleOtherChanges = this.handleOtherChanges.bind(this);
         this.handleImageChange = this.handleImageChange.bind(this);
+        this.handleNameChange = this.handleNameChange.bind(this);
         this.submitEvent = this.submitEvent.bind(this);
     }
     submitEvent = (e) => {
@@ -54,6 +56,26 @@ class AddRecipe extends Component {
         this.setState({
             ingredientDtos: selectedOptions
         });
+    }
+    handleNameChange = (event) => {
+        this.setState({
+            name: event.target.value
+        });
+        const params = {
+            name : event.target.value
+        }
+        RecipeService.findRecipeByName(params).then(res => {
+            if(res.data === true){
+                this.setState({
+                    nameError : "Name already exist"
+                })
+            }
+            else{
+                this.setState({
+                    nameError : null
+                })
+            }
+        })
     }
     handleOtherChanges = (event) => {
         //console.log("submit event : image name : ",this.state.image.name);
@@ -131,13 +153,15 @@ class AddRecipe extends Component {
                     </Form.Group>
                     <Form.Group style={{ width: '50%', float: 'left' }}>
                         <Form.Label>Recipe Name</Form.Label>
-                        <Form.Control type="text" name="name" onChange={this.handleOtherChanges} style={{ width: '70%' }}></Form.Control>
+                        <Form.Control type="text" name="name" onChange={this.handleNameChange} style={{ width: '70%' }}></Form.Control>
                         
                     </Form.Group>
+                    
                     <Form.Group style={{width: '50%', float: 'left', height:'70px'}}>
                         <Form.File id="exampleFormControlFile1" label="Example file input" onChange={this.handleImageChange} />
 
                     </Form.Group>
+                    {this.state.nameError ? <p style={{fontSize:'0.7rem', left:'40px', color:'red'}}>{this.state.nameError}</p> : null}
                     <Form.Group style={{ width: '50%', float: 'left' }}>
                         <Form.Label>Cooking Time</Form.Label>
                         <Form.Control type="text" name="cookingTime" onChange={this.handleOtherChanges} style={{ width: '70%' }}></Form.Control>

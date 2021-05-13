@@ -24,38 +24,58 @@ class FullRecipe extends Component {
                     <div class="row bg-faded">
                     
                         <div class="col-10 mx-auto text-center" style={{width:'700'}}>
-                        <div class="recipeDirections"><h2 style={{textAlign:'center', height:'30px'}}>{recipe.name}</h2></div><br />
-                            <img src={recipe.imageUrl} width='600' height='450' style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', borderRadius:'10px'}} />
+                        <div class="recipeDirections"><h4 style={{textAlign:'center', height:'30px'}}>{recipe.name}</h4></div><br />
+                            <img src={recipe.imageUrl} width='500' height='350' style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', borderRadius:'10px'}} />
                             
                             {/* <Jumbotron>
                                 hiiii
                             </Jumbotron> */}
                             <br /><br />
                             
-                            <div class="recipeDirections">
+                            <div class="recipeDirections" style={{width:'100%'}} >
+                                <div>
+                                <br />
                                 <div className="recipeDirectionsHeadingsLeft">
-                                    <h4>Cooking Time : {recipe.cookingTime} minutes</h4>
+                                    <h5>Cooking Time : {recipe.cookingTime} minutes</h5>
                                 </div>
                                 <div className="recipeDirectionsHeadingsRight">
-                                        <h4>Serves : {recipe.serves}</h4>
+                                        <h5>Serves : {recipe.serves}</h5>
                                 </div>
-                                <br /><br />
-                                <h4>Ingredients : </h4>
+                                
+                                <div style={{width:'60%', float:'left'}}>
+                                <br />
+                                <h5>Ingredients : </h5>
                                 {
                                     recipe.ingredientList.map((ingredient, index) => 
                                         <div>{index+1}&nbsp;&nbsp;&nbsp;{ingredient}</div>)
                                 }
-                                
+                                </div>
+                                { this.props.location.state.additional ?
+                                <div style={{width:'40%', float:'left'}}>
+                                    <br />
+                                <h5>Additional Ingredients : </h5>
+                                {
+                                    recipe.ingredientDtos.map((ingredient, index) => 
+                                        <div>{index+1}&nbsp;&nbsp;&nbsp;{ingredient.name}</div>)
+                                }
+                                </div>
+                                : null}
                                 <br />
-                                <h4>Directions : </h4>
+                                <div style={{float:'left', width:'100%'}}>
+                                <br />
+                                <h5>Directions : </h5>
                                 {
                                     recipe.directions.map((direction, index) => 
                                         <div>{index+1}&nbsp;&nbsp;&nbsp;{direction}</div>)
                                 }
+                                </div>
+                                <div style={{clear:'both'}}></div>
                             </div>
-
+                            
+                            </div>
                         </div>
                     </div>
+                    <br /><br />
                 </Container>
                 
             

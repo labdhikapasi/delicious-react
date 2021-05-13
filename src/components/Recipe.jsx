@@ -18,12 +18,14 @@ class Recipe extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            recipes: []
+            recipes: [],
+            otherRecipes:null
         }
     }
     componentDidMount() {
         this.setState({
-            recipes: this.props.location.state
+            recipes: this.props.location.state.recipeDtos,
+            otherRecipes: this.props.location.state.otherRecipeDtos
         })
     }
     
@@ -33,7 +35,7 @@ class Recipe extends Component {
 
             <Container>
                 {
-                //JSON.stringify(this.props.location.state)
+                console.log(JSON.stringify(this.props.location.state))
                 }
                 <br /><br />
                 <CardColumns>
@@ -57,6 +59,38 @@ class Recipe extends Component {
                     )
                 }
                 </CardColumns>
+
+                <br /><br />
+                
+                {
+                    this.state.otherRecipes != null ?
+                    <>
+                    <p>Other Recipes</p>
+                    <CardColumns>
+                {
+                    this.state.otherRecipes.map(recipe => 
+                        
+                        <Link to={{
+                            pathname:'/recipe',
+                            state: {
+                                recipe: recipe,
+                                additional:true
+                            }
+                        }}>
+                        <Card style={styles.card}>
+                            <Card.Img variant="top" src={recipe.imageUrl} className="h-75 d-inline-block" style={styles.cardImage} />
+                            <Card.Body>
+                                <Card.Title className="text-center" style={{color:'black'}}>{recipe.name}</Card.Title>
+    
+                            </Card.Body>
+                        </Card>
+                        </Link>
+                    )
+                }
+                </CardColumns>
+                </>
+                     : null
+                }
 
             </Container>
         );
