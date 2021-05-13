@@ -16,7 +16,13 @@ class IngredientsDropdown extends Component {
             dishType: '',
             mealType: '',
             data: [],
-            checked: false
+            cookingTime: '',
+            checked: false,
+            checkedCookingTime: false,
+            checkedDishType: false,
+            checkedMealType: false,
+            checkedIngredients: true
+            
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -55,7 +61,7 @@ class IngredientsDropdown extends Component {
     }
     handleChecked = (event) => {
         this.setState({
-            checked : event.target.checked
+            [event.target.name] : event.target.checked
         })
     }
     componentDidMount() {
@@ -78,7 +84,21 @@ class IngredientsDropdown extends Component {
                 
 
                 <Form>
-                    <Form.Group style={{ marginTop: '20px' }}>
+                    <Form.Group controlId="formBasicCheckbox" style={{float:'left', width:'15%'}}>
+                        <Form.Check type="checkbox" label="Ingredients" name="checkedIngredients" onChange={this.handleChecked} checked={this.state.checkedIngredients}/>
+                    </Form.Group>
+                    <Form.Group controlId="formBasicCheckbox" style={{float:'left', width:'15%'}}>
+                        <Form.Check type="checkbox" label="Meal Type" name="checkedMealType" onChange={this.handleChecked}/>
+                    </Form.Group>
+                    <Form.Group controlId="formBasicCheckbox" style={{float:'left', width:'15%'}}>
+                        <Form.Check type="checkbox" label="Dish Type" name="checkedDishType" onChange={this.handleChecked}/>
+                    </Form.Group>
+                    <Form.Group controlId="formBasicCheckbox" style={{float:'left', width:'55%'}}>
+                        <Form.Check type="checkbox" label="cooking Time" name="checkedCookingTime" onChange={this.handleChecked}/>
+                    </Form.Group>
+                    {
+                        this.state.checkedIngredients ?
+                        <Form.Group style={{ marginTop: '20px' }}>
                         <Form.Label>Ingredients To Find Recipes</Form.Label>
                         <Typeahead
                             id="basic-typeahead-multiple"
@@ -90,11 +110,15 @@ class IngredientsDropdown extends Component {
                             selected={this.state.ingredients}
                             style={{ borderColor: 'black' }}
                         />
-                    </Form.Group>
-                    <Form.Group style={{ width: '50%', float: 'left' }}>
+                        </Form.Group>
+                        : null
+                    }
+                    {
+                        this.state.checkedMealType ?
+                        <Form.Group style={{ width: '20%', float: 'left' }}>
                         <Form.Label>Meal Type</Form.Label>
 
-                        <Form.Control as="select" placeholder="Choose dish type ..." name="mealType" onChange={this.handleOtherChanges} style={{ width: '70%' }}>
+                        <Form.Control as="select" placeholder="Choose dish type ..." name="mealType" onChange={this.handleOtherChanges} style={{ width: '80%' }}>
                             <option value="">Choose ...</option>
                             <option value="Snacks">Snacks</option>
                             <option value="Breakfast">Breakfast</option>
@@ -104,10 +128,14 @@ class IngredientsDropdown extends Component {
 
 
                         </Form.Control>
-                    </Form.Group>
-                    <Form.Group style={{ width: '50%', float: 'left' }}>
+                        </Form.Group>
+                        : null
+                    }
+                    {
+                        this.state.checkedDishType ?
+                        <Form.Group style={{ width: '20%', float: 'left' }}>
                         <Form.Label>Dish Type</Form.Label>
-                        <Form.Control as="select" placeholder="Choose dish type ..." name="dishType" onChange={this.handleOtherChanges} style={{ width: '70%' }}>
+                        <Form.Control as="select" placeholder="Choose dish type ..." name="dishType" onChange={this.handleOtherChanges} style={{ width: '80%' }}>
                             <option value="">Choose ...</option>
                             <option value="Salad">Salad</option>
                             <option value="Cake">Cake</option>
@@ -121,13 +149,27 @@ class IngredientsDropdown extends Component {
                             <option value="Soup">Soup</option>
 
                         </Form.Control>
-                    </Form.Group>
+                        </Form.Group>
+                        : null
+                    }
+                    {
+                        this.state.checkedCookingTime ?
+                        <Form.Group style={{ width: '60%', float: 'left' }}>
+                        <Form.Label>Cooking Time</Form.Label>
+                        <Form.Control type="text" name="cookingTime" onChange={this.handleOtherChanges} style={{ width: '25%' }}></Form.Control>
+
+                        </Form.Group>
+                        : null
+                    }
+                    
                     <Form.Group controlId="formBasicCheckbox" style={{ width: '100%', float: 'left' }}>
-                        <Form.Check type="checkbox" label="Recipes with additional ingredients" onChange={this.handleChecked}/>
+                        <Form.Check type="checkbox" label="Recipes with additional ingredients" name="checked" onChange={this.handleChecked}/>
                     </Form.Group>
+                    <div style={{width:'100%', float:'left'}}>
                     <Button variant="dark" type="submit" onClick={this.submitEvent} style={{ backgroungColor: '#343a40 !important' }}>
                         Submit
                     </Button>
+                    </div>
                 </Form>
             </div>
         );

@@ -40,7 +40,7 @@ class UserHome extends Component {
                     <h2>Welcome to RecipeBook</h2>
                     <p>This is how to build a website with React, React-Router, React-bootstrap</p>
                     <IngredientsDropdown {...this.props}/>
-                    
+                    <div style={{clear:'both'}}></div>
                 </Jumbotron>
 
                 <CardColumns>
