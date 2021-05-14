@@ -82,7 +82,7 @@
     background-size: cover;
   }
   .recipeDirections {
-    background-image: url("../images/recipe_directions_background.jpg");
+    background-image: url("../images/dark_background.jpg");
     background-size: cover;
     text-align: left;
     border-spacing:10px;
@@ -90,7 +90,8 @@
     margin-right: auto;
     padding: 15px;
     font-size: 15px;
-    border-radius:20px
+    border-radius:20px;
+    color: wheat
   }
   .recipeDirectionsHeadingsLeft {
     

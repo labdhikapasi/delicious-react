@@ -10,11 +10,16 @@ const styles = {
     card: {
         borderWidth: '0px', 
         borderColor:'white', 
-        borderRadius:'50px'
+        borderRadius:'50px',
+        width: '300px',
+        height: '360px',
+        backgroundColor:' #fff3e6'
     },
     cardImage: {
       objectFit: 'cover',
-      borderRadius:'50px 50px 0 0'
+      borderRadius:'50px 50px 0 0',
+      width: '300px',
+      height: '300px'
     },
     ingredientImage: {
         backgroundColor:'url("../images/background_image.jpg")'
@@ -47,7 +52,7 @@ class UserHome extends Component {
                 <Link to="/login">
                     <Card style={styles.card} >
                     
-                        <Card.Img variant="top" src="assets/soup.jpg" className="h-75 d-inline-block" style={styles.cardImage} />
+                        <Card.Img variant="top" src="assets/soup.jpg" style={styles.cardImage} />
                         <Card.Body>
                             <Card.Title className="text-center" style={{color:'black'}}>Soup</Card.Title>
                             
@@ -56,8 +61,11 @@ class UserHome extends Component {
                     </Card>
                     </Link>
                     <Card style={styles.card}>
+                        {
+                            //<Card.Img variant="top" src="assets/salad.jpg" className="h-75 d-inline-block" style={styles.cardImage}/>
                         
-                        <Card.Img variant="top" src="assets/salad.jpg" className="h-75 d-inline-block" style={styles.cardImage}/>
+                        }
+                        <Card.Img variant="top" src="assets/salad.jpg" style={styles.cardImage}/>
                         <Card.Body>
                             <Card.Title className="text-center" style={{color:'black'}}>Salad</Card.Title>
                             
@@ -96,7 +104,7 @@ class UserHome extends Component {
                         </Card.Body>
                     </Card>
                     <Card style={styles.card}>
-                        <Card.Img variant="top" src="assets/juice.jpg" style={styles.cardImage}/>
+                        <Card.Img variant="top" src="assets/juice.jpg" style={styles.cardImage} />
                         <Card.Body>
                             <Card.Title className="text-center" style={{color:'black'}}>Juice</Card.Title>
                             

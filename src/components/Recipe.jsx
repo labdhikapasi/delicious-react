@@ -6,11 +6,16 @@ const styles = {
     card: {
         borderWidth: '0px', 
         borderColor:'white', 
-        borderRadius:'50px'
+        borderRadius:'50px',
+        width: '300px',
+        height: '360px',
+        backgroundColor:' #fff3e6'
     },
     cardImage: {
       objectFit: 'cover',
-      borderRadius:'50px 50px 0 0'
+      borderRadius:'50px 50px 0 0',
+      width: '300px',
+      height: '300px'
     }
     
   }
@@ -49,7 +54,7 @@ class Recipe extends Component {
                             }
                         }}>
                         <Card style={styles.card}>
-                            <Card.Img variant="top" src={recipe.imageUrl} className="h-75 d-inline-block" style={styles.cardImage} />
+                            <Card.Img variant="top" src={recipe.imageUrl} style={styles.cardImage} />
                             <Card.Body>
                                 <Card.Title className="text-center" style={{color:'black'}}>{recipe.name}</Card.Title>
     
@@ -78,7 +83,7 @@ class Recipe extends Component {
                             }
                         }}>
                         <Card style={styles.card}>
-                            <Card.Img variant="top" src={recipe.imageUrl} className="h-75 d-inline-block" style={styles.cardImage} />
+                            <Card.Img variant="top" src={recipe.imageUrl} style={styles.cardImage} />
                             <Card.Body>
                                 <Card.Title className="text-center" style={{color:'black'}}>{recipe.name}</Card.Title>
     
