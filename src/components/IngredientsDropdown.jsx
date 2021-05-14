@@ -96,7 +96,7 @@ class IngredientsDropdown extends Component {
         return (
             <div>
                 {
-                JSON.stringify(this.state)
+                //JSON.stringify(this.state)
                 }
 
                 <Form>

@@ -28,12 +28,14 @@ class Login extends Component {
                 if (res.data.emailId === 'admin') {
                     localStorage.setItem('emailId', 'admin');
                     localStorage.setItem('id', 1);
+                    localStorage.setItem('userRole','ADMIN');
                     this.props.onHandleLoginChange(true,'ADMIN');
-                    this.props.history.push('/admin');
+                    this.props.history.push('/user');
                     
                 } else {
                     localStorage.setItem('emailId', res.data.emailId);
                     localStorage.setItem('id', res.data.id);
+                    localStorage.setItem('userRole','USER');
                     this.props.onHandleLoginChange(true,'USER');
                     this.props.history.push('/user');
                     
@@ -65,10 +67,7 @@ class Login extends Component {
         return (
             <>
             
-                <br />
-                <br />
-                <br />
-                <br />
+                
                 <div className="outer">
                     <div className="inner">
                         <form>

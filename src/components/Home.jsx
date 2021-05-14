@@ -27,7 +27,7 @@ const styles = {
     
   }
   
-class UserHome extends Component {
+class Home extends Component {
     constructor(props){
         super(props)
         console.log('emailId => ' + localStorage.getItem('emailId'));
@@ -121,10 +121,7 @@ class UserHome extends Component {
                         <Card.Img variant="top" src="assets/shakes.jpg" style={styles.cardImage}/>
                         <Card.Body>
                             <Card.Title className="text-center" style={{color:'black'}}>Shake</Card.Title>
-                            <Card.Text>
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </Card.Text>
+                            
                         </Card.Body>
                     </Card>
                 </CardColumns>
@@ -134,4 +131,4 @@ class UserHome extends Component {
     }
 }
 
-export default UserHome;
+export default Home;

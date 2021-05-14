@@ -40,7 +40,8 @@ class CustomNavbar extends Component {
         console.log('props user = '+this.props.user);
         let signinButton;
         //if(localStorage.getItem('isLoggedIn')){
-        if(this.props.loginStatus){
+        //if(this.props.loginStatus){
+        if(localStorage.getItem('id')){
             console.log('logged in : '+localStorage.getItem('isLoggedIn'))
             signinButton = <Nav.Link onClick={this.signOut}>
             Sign Out</Nav.Link>
@@ -57,14 +58,21 @@ class CustomNavbar extends Component {
                     <Nav className="mr-auto">
                     {this.props.user === 'ADMIN' ? <Nav.Link href="/">Ingredients</Nav.Link> : <Nav.Link href="/">Home</Nav.Link>}
                     {this.props.user === 'ADMIN' ? <Nav.Link href="/">Recipes</Nav.Link> : null}
-                        
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="/addRecipe">Add Recipe</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        {
+                            localStorage.getItem('id') ?
+                            <NavDropdown title="Actions" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="/adminAddRecipe">Add Recipe</NavDropdown.Item>
+                            {localStorage.getItem('userRole') === 'ADMIN' ? <NavDropdown.Item href="/adminAddIngredient">Add Ingredient</NavDropdown.Item> : null}
+                            {
+                                //<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                //<NavDropdown.Divider />
+                                //<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            }
+                            
                         </NavDropdown>
+                            : null
+                        }
+                        
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">Profile</Nav.Link>

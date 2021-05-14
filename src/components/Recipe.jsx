@@ -70,7 +70,7 @@ class Recipe extends Component {
                 {
                     this.state.otherRecipes != null ?
                     <>
-                    <p>Other Recipes</p>
+                    <p style={{color:'wheat', fontSize:'25px', textAlign:'center'}}>┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ Other Recipes ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈</p>
                     <CardColumns>
                 {
                     this.state.otherRecipes.map(recipe => 
