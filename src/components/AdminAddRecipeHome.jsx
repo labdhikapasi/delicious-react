@@ -36,8 +36,8 @@ class AdminAddRecipeHome extends Component {
             <Container>
                 <br></br>
                 <Jumbotron style={styles.ingredientImage}>
-                    <h2>Welcome to RecipeBook</h2>
-                    <p>This is how to build a website with React, React-Router, React-bootstrap</p>
+                    <h3>Add Recipe Details</h3>
+                    
                     <AdminAddRecipe {...this.props}/>
                     
                 </Jumbotron>
