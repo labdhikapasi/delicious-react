@@ -52,7 +52,12 @@ class Home extends Component {
                 </Jumbotron>
 
                 <CardColumns>
-                <Link to="/login">
+                <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Soup"
+                            }
+                        }}>
                     <Card style={styles.card} >
                     
                         <Card.Img variant="top" src="assets/soup.jpg" style={styles.cardImage} />
@@ -63,6 +68,12 @@ class Home extends Component {
                         
                     </Card>
                     </Link>
+                    <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Salad"
+                            }
+                        }}>
                     <Card style={styles.card}>
                         {
                             //<Card.Img variant="top" src="assets/salad.jpg" className="h-75 d-inline-block" style={styles.cardImage}/>
@@ -75,6 +86,13 @@ class Home extends Component {
                         </Card.Body>
                         
                     </Card>
+                    </Link>
+                    <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Salad"
+                            }
+                        }}>
                     <Card style={styles.card}>
                     
                         <Card.Img variant="top" src="assets/cake.jpg" style={styles.cardImage}/>
@@ -84,7 +102,14 @@ class Home extends Component {
                         </Card.Body>
                        
                     </Card>
+                    </Link>
                     <br></br>
+                    <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Salad"
+                            }
+                        }}>
                     <Card style={styles.card}>
                         <Card.Img variant="top" src="assets/chinese.jpg" style={styles.cardImage}/>
                         <Card.Body>
@@ -92,6 +117,13 @@ class Home extends Component {
                             
                         </Card.Body>
                     </Card>
+                    </Link>
+                    <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Salad"
+                            }
+                        }}>
                     <Card style={styles.card}>
                         <Card.Img variant="top" src="assets/dosa.jpg" style={styles.cardImage}/>
                         <Card.Body>
@@ -99,6 +131,13 @@ class Home extends Component {
                             
                         </Card.Body>
                     </Card>
+                    </Link>
+                    <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Salad"
+                            }
+                        }}>
                     <Card style={styles.card}>
                         <Card.Img variant="top" src="assets/icecream.jpg" style={styles.cardImage}/>
                         <Card.Body>
@@ -106,6 +145,13 @@ class Home extends Component {
                             
                         </Card.Body>
                     </Card>
+                    </Link>
+                    <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Salad"
+                            }
+                        }}>
                     <Card style={styles.card}>
                         <Card.Img variant="top" src="assets/juice.jpg" style={styles.cardImage} />
                         <Card.Body>
@@ -113,6 +159,13 @@ class Home extends Component {
                             
                         </Card.Body>
                     </Card>
+                    </Link>
+                    <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Salad"
+                            }
+                        }}>
                     <Card style={styles.card}>
                         <Card.Img variant="top" src="assets/pizza.jpg" style={styles.cardImage}/>
                         <Card.Body>
@@ -120,6 +173,13 @@ class Home extends Component {
                             
                         </Card.Body>
                     </Card>
+                    </Link>
+                    <Link to={{
+                            pathname:'/recipesByDishType',
+                            state: {
+                                dishType: "Salad"
+                            }
+                        }}>
                     <Card style={styles.card}>
                         <Card.Img variant="top" src="assets/shakes.jpg" style={styles.cardImage}/>
                         <Card.Body>
@@ -127,6 +187,7 @@ class Home extends Component {
                             
                         </Card.Body>
                     </Card>
+                    </Link>
                 </CardColumns>
             </Container>
             </>

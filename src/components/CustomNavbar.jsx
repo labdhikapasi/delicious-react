@@ -56,8 +56,11 @@ class CustomNavbar extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                    {this.props.user === 'ADMIN' ? <Nav.Link href="/">Ingredients</Nav.Link> : <Nav.Link href="/">Home</Nav.Link>}
-                    {this.props.user === 'ADMIN' ? <Nav.Link href="/">Recipes</Nav.Link> : null}
+                        <Nav.Link href="/">Home</Nav.Link>
+                    {//this.props.user === 'ADMIN' ? <Nav.Link href="/">Ingredients</Nav.Link> : <Nav.Link href="/">Home</Nav.Link>
+                    }
+                    {//this.props.user === 'ADMIN' ? <Nav.Link href="/">Recipes</Nav.Link> : null
+                    }
                         {
                             localStorage.getItem('id') ?
                             <NavDropdown title="Actions" id="collasible-nav-dropdown">

@@ -7,6 +7,7 @@ const RECIPE_SERRCH_BY_NAME_URL = "http://localhost:8089/recipe";
 const RECIPE_UNAPPROVED_URL = "http://localhost:8089/unApprovedRecipes";
 const RECIPE_APPROVE_URL = "http://localhost:8089/approveRecipe";
 const RECIPE_REJECT_URL = "http://localhost:8089/rejectRecipe";
+const RECIPE_BY_DISHTYPE_URL = "http://localhost:8089/getRecipesByDishType";
 
 
 class RecipeService {
@@ -30,6 +31,9 @@ class RecipeService {
     }
     rejectRecipe(params){
         return axios.get(RECIPE_REJECT_URL,{params});
+    }
+    getRecipesByDishType(params){
+        return axios.get(RECIPE_BY_DISHTYPE_URL,{params});
     }
 }
 
