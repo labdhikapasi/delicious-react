@@ -40,6 +40,9 @@ class AdminAddRecipe extends Component {
     submitEvent = (e) => {
         //console.log("submit event : image name : ",this.state.image.name);
         e.preventDefault();
+        Array.from(document.querySelectorAll("input","select","textarea")).forEach(
+            input => (input.value = "")
+          );
         if(localStorage.getItem('id')===null){
             this.setState({
                 message : <p style={{color:'red'}}>Please Login to add Recipe</p>

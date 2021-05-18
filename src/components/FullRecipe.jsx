@@ -47,7 +47,7 @@ class FullRecipe extends Component {
                                 <h5>Ingredients : </h5>
                                 {
                                     recipe.ingredientList.map((ingredient, index) => 
-                                        <div><div style={{width:'22px', float:'left'}}>{index+1}</div><div style={{width:'410px', float:'left'}}>{ingredient}</div></div>)
+                                        <div><div style={{width:'30px', float:'left'}}>{index+1}</div><div style={{width:'402px', float:'left'}}>{ingredient}</div></div>)
                                 }
                                 </div>
                                 { this.props.location.state.additional ?

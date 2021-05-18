@@ -41,6 +41,9 @@ class Home extends Component {
         
             <Container>
                 <br></br>
+                {
+                    console.log(JSON.stringify(localStorage.getItem('emailId')))
+                }
                 <Jumbotron style={styles.ingredientImage}>
                     <h2>Welcome to RecipeBook</h2>
                     <p>This is how to build a website with React, React-Router, React-bootstrap</p>

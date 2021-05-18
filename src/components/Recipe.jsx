@@ -41,8 +41,12 @@ class Recipe extends Component {
             <Container>
                 {
                 console.log(JSON.stringify(this.props.location.state))
+                
                 }
                 <br /><br />
+                {
+                    this.state.recipes.length === 0 ? <p style={{color:'wheat', fontSize:'25px', textAlign:'center'}}>No Results Found</p>: null
+                }
                 <CardColumns>
                 {
                     this.state.recipes.map(recipe => 

@@ -9,7 +9,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Recipe from './components/Recipe';
 import FullRecipe from './components/FullRecipe';
-
+import UnApprovedRecipesHome from './components/UnApprovedRecipesHome';
+import UnApprovedFullRecipe from './components/UnApprovedFullRecipe';
 
 class App extends Component {
   constructor(props){
@@ -43,7 +44,8 @@ handleLoginChange(loginStatus,user){
         <Route  path="/adminAddIngredient" component={AdminAddIngredient}/> 
         <Route  path="/recipes" render={(props) => <Recipe {...props}/>}/>
         <Route  path="/recipe"  render={(props) => <FullRecipe {...props}/>}/>
-        
+        <Route  path="/unApprovedRecipes" render={(props) => <UnApprovedRecipesHome {...props}/>}/>
+        <Route  path="/unApprovedFullRecipe" render={(props) => <UnApprovedFullRecipe {...props}/>}/>
         
     </Router>
   );}

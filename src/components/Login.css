@@ -106,3 +106,7 @@
     font-size: 18px;
     width: 40%;
   }
+  .list-group-item {
+    background-image: url('../images/login_background.jpg');
+    text-align: left;
+  }

@@ -63,6 +63,7 @@ class CustomNavbar extends Component {
                             <NavDropdown title="Actions" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="/adminAddRecipe">Add Recipe</NavDropdown.Item>
                             {localStorage.getItem('userRole') === 'ADMIN' ? <NavDropdown.Item href="/adminAddIngredient">Add Ingredient</NavDropdown.Item> : null}
+                            {localStorage.getItem('userRole') === 'ADMIN' ? <NavDropdown.Item href="/unApprovedRecipes">Approve Recipe</NavDropdown.Item> : null}
                             {
                                 //<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                 //<NavDropdown.Divider />
