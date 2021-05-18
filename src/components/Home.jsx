@@ -1,10 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Image, Button, Jumbotron, Card, CardColumns, CardDeck } from 'react-bootstrap';
+import { Container, Jumbotron, Card, CardColumns } from 'react-bootstrap';
 import './Home.css';
-import CustomNavbar from './CustomNavbar';
-import SearchDropdown from './SearchDropdown';
-import SeachDropdown from './SearchDropdown';
+
 import IngredientsDropdown from './IngredientsDropdown';
 const styles = {
     card: {
@@ -46,7 +44,8 @@ class Home extends Component {
                 }
                 <Jumbotron style={styles.ingredientImage}>
                     <h2>Welcome to RecipeBook</h2>
-                    <p>This is how to build a website with React, React-Router, React-bootstrap</p>
+                    <p style={{fontStyle: 'italic'}}>"A Recipe has no soul, you as the Cook must bring soul to the Recipe"</p>
+                    < br/>
                     <IngredientsDropdown {...this.props}/>
                     <div style={{clear:'both'}}></div>
                 </Jumbotron>
@@ -90,7 +89,7 @@ class Home extends Component {
                     <Link to={{
                             pathname:'/recipesByDishType',
                             state: {
-                                dishType: "Salad"
+                                dishType: "Cake"
                             }
                         }}>
                     <Card style={styles.card}>
@@ -107,7 +106,7 @@ class Home extends Component {
                     <Link to={{
                             pathname:'/recipesByDishType',
                             state: {
-                                dishType: "Salad"
+                                dishType: "Chinese"
                             }
                         }}>
                     <Card style={styles.card}>
@@ -121,7 +120,7 @@ class Home extends Component {
                     <Link to={{
                             pathname:'/recipesByDishType',
                             state: {
-                                dishType: "Salad"
+                                dishType: "Dosa"
                             }
                         }}>
                     <Card style={styles.card}>
@@ -135,7 +134,7 @@ class Home extends Component {
                     <Link to={{
                             pathname:'/recipesByDishType',
                             state: {
-                                dishType: "Salad"
+                                dishType: "IceCream"
                             }
                         }}>
                     <Card style={styles.card}>
@@ -149,7 +148,7 @@ class Home extends Component {
                     <Link to={{
                             pathname:'/recipesByDishType',
                             state: {
-                                dishType: "Salad"
+                                dishType: "Juice"
                             }
                         }}>
                     <Card style={styles.card}>
@@ -163,7 +162,7 @@ class Home extends Component {
                     <Link to={{
                             pathname:'/recipesByDishType',
                             state: {
-                                dishType: "Salad"
+                                dishType: "Pizza"
                             }
                         }}>
                     <Card style={styles.card}>
@@ -177,7 +176,7 @@ class Home extends Component {
                     <Link to={{
                             pathname:'/recipesByDishType',
                             state: {
-                                dishType: "Salad"
+                                dishType: "Shake"
                             }
                         }}>
                     <Card style={styles.card}>

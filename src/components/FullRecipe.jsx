@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Media from 'react-bootstrap/Media'
-import { Container, Row, Col, Image, Button, Jumbotron, Card, CardColumns, CardDeck } from 'react-bootstrap';
+
+import { Container } from 'react-bootstrap';
 
 class FullRecipe extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class FullRecipe extends Component {
                     
                         <div class="col-10 mx-auto text-center" style={{width:'700'}}>
                         <div class="recipeDirections"><h4 style={{textAlign:'center', height:'30px'}}>{recipe.name}</h4></div><br />
-                            <img src={recipe.imageUrl} width='500' height='350' style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', borderRadius:'10px'}} />
+                            <img src={recipe.imageUrl} alt={"recipe"} width='500' height='350' style={{boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)', borderRadius:'10px'}} />
                             
                             {/* <Jumbotron>
                                 hiiii

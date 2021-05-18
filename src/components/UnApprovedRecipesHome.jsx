@@ -45,8 +45,8 @@ class ApproveRejectRecipesHome extends Component {
                 <div class="container" style={{ width: '50%', backgroundImage: 'none' }}>
                     {
                         this.state.data ? 
-                        <p style={{color:'wheat', fontSize:'25px', textAlign:'center'}}>Recipes added by Users</p>
-                        : <p style={{color:'wheat', fontSize:'25px', textAlign:'center'}}>Users haven't added any Recipe</p>
+                        <p style={{color:'wheat', fontSize:'20px', textAlign:'center'}}>Recipes suggested by Users</p>
+                        : <p style={{color:'wheat', fontSize:'20px', textAlign:'center'}}>Users haven't added any Recipe</p>
                     }
                 
                     {this.state.data ?

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Image, Button, Jumbotron, Card, CardColumns, CardDeck } from 'react-bootstrap';
+import { Container, Card, CardColumns } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import RecipeService from '../services/RecipeService';
 

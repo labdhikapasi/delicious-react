@@ -1,6 +1,6 @@
-import React, { Component, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Jumbotron, Card, CardColumns } from 'react-bootstrap';
+import React, { Component } from 'react';
+
+import { Container, Jumbotron } from 'react-bootstrap';
 import './Home.css';
 
 import AdminAddRecipe from './AdminAddRecipe';

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import LoginService from '../services/LoginService.js'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+
 import './Login.css'
-import CustomNavbar from './CustomNavbar.jsx';
+
 
 class Login extends Component {
     constructor(props) {
@@ -93,14 +93,16 @@ class Login extends Component {
 
                             <button type="submit" className="btn btn-dark btn-lg btn-block" onClick={this.loginEvent}>Sign in</button>
                             <div>
-                                <div className="forgot-password text-left" style={{width:'190px', float: 'left'}}><a href="/register">Register</a></div>
+                                <div className="forgot-password text-left" style={{width:'15%', float: 'right', textAlign:'right'}}><a href="/register">Register</a></div>
+                                
+                                {
+                                    //<div className="forgot-password text-right" style={{width:'150px', float: 'left', top : '10px'}}>
+                                
+                                    //Forgot <a href="#">password?</a></div>
+                                
+                                }
                                 
                                 
-                                <div className="forgot-password text-right" style={{width:'150px', float: 'left', top : '10px'}}>
-                                
-                                    Forgot <a href="#">password?</a>
-                                
-                                </div>
                                 {errorMessage ? <p className="forgot-password text-left" style={{ color: 'red'}}>
                                     {errorMessage}
                                 </p> : null}

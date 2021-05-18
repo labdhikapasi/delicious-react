@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Data from './Data'
-import { Form, NavItem, NavDropdown, Button } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+
+import { Form,  Button } from 'react-bootstrap';
+
 import { Typeahead } from 'react-bootstrap-typeahead';
 import IngredientService from '../services/IngredientService.js'
 import RecipeService from '../services/RecipeService';

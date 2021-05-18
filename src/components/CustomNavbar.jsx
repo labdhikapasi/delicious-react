@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, NavDropdown } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+
 
 class CustomNavbar extends Component {
     constructor(props){
