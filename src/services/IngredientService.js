@@ -1,8 +1,8 @@
 
 import axios from 'axios';
 
-const INGREDIENT_GET_URL = "http://localhost:8089/ingredients";
-const INGREDIENT_URL = "http://localhost:8089/ingredient";
+const INGREDIENT_GET_URL = "http://172.18.0.3:8089/ingredients";
+const INGREDIENT_URL = "http://172.18.0.3:8089/ingredient";
 
 
 class IngredientService {

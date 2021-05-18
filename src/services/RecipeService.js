@@ -1,13 +1,13 @@
 
 import axios from 'axios';
 
-const RECIPE_URL = "http://localhost:8089/recipes";
-const RECIPE_ADD_URL = "http://localhost:8089/addRecipe";
-const RECIPE_SERRCH_BY_NAME_URL = "http://localhost:8089/recipe";
-const RECIPE_UNAPPROVED_URL = "http://localhost:8089/unApprovedRecipes";
-const RECIPE_APPROVE_URL = "http://localhost:8089/approveRecipe";
-const RECIPE_REJECT_URL = "http://localhost:8089/rejectRecipe";
-const RECIPE_BY_DISHTYPE_URL = "http://localhost:8089/getRecipesByDishType";
+const RECIPE_URL = "http://172.18.0.3:8089/recipes";
+const RECIPE_ADD_URL = "http://172.18.0.3:8089/addRecipe";
+const RECIPE_SERRCH_BY_NAME_URL = "http://172.18.0.3:8089/recipe";
+const RECIPE_UNAPPROVED_URL = "http://172.18.0.3:8089/unApprovedRecipes";
+const RECIPE_APPROVE_URL = "http://172.18.0.3:8089/approveRecipe";
+const RECIPE_REJECT_URL = "http://172.18.0.3:8089/rejectRecipe";
+const RECIPE_BY_DISHTYPE_URL = "http://172.18.0.3:8089/getRecipesByDishType";
 
 
 class RecipeService {
