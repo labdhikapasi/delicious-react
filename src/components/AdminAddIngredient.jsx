@@ -36,7 +36,9 @@ class AdminAddIngredient extends Component {
     submitEvent = (e) => {
         //console.log("submit event : image name : ",this.state.image.name);
         e.preventDefault();
-        
+        Array.from(document.querySelectorAll("input")).forEach(
+            input => (input.value = "")
+          );
         IngredientService.addIngredient(this.state).then(res => {
             console.log('response => ' + JSON.stringify(res));
             this.setState({
